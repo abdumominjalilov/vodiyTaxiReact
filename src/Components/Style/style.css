@@ -1,0 +1,11 @@
+.FirstBox {
+    width: 250px;
+}
+
+.form-control:focus {
+    z-index: 5;
+}
+
+.labeltxt {
+    font-size: 10px;
+}
