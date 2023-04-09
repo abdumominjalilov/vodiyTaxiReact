@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import QayerManzilCs from "./Components/Customer/01_QayerManzil";
 import QayerTumanManzilCs from "./Components/Customer/02_QayerTumanManzil";
-import IsmPulTelCs from "./Components/Customer/04_IsmPulTel";
+import IsmPulCus from "./Components/Customer/IsmPulCus";
 import KishiSoniCs from "./Components/Customer/03_KishiSoni";
 import QayerQatnov from "./Components/Driver/01_QayerQatnov";
 import QayerTumanQatnov from "./Components/Driver/02_QayerTumanQatnov";
@@ -18,7 +18,6 @@ import CsHaydovchi_Topdim from "./Components/Customer/CsHaydovchi_Topdim";
 import CsHaydovchilarni_Korish from "./Components/Customer/CsHaydovchilarni_Korish";
 import CsQayerHaydovchiKorish from "./Components/Customer/CsQayerHaydovchiKorish";
 import DrMijozTopdim from "./Components/Driver/DrMijozTopdim";
-
 
 
 function App() {
@@ -39,7 +38,7 @@ function App() {
         <Route path="/Customer" element={<QayerManzilCs />} />
         <Route path="/Customer/Tuman" element={<QayerTumanManzilCs />} />
         <Route path="/Customer/KishiSoni" element={<KishiSoniCs />} />
-        <Route path="/Customer/IsmPulTel" element={<IsmPulTelCs />} />
+        <Route path="/Customer/IsmPulTel" element={<IsmPulCus />} />
 
         <Route path="/Driver/mijoz_topdim" element={<DrMijozTopdim />} />
         <Route path="/Driver/ViewDriver" element={<ViewDriver />} />

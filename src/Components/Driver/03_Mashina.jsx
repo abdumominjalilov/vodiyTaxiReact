@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { adddriverMashina } from '../../redux/action';
+import { tg } from '../Tg';
+
 
 const Mashina = () => {
 
-  const tg = window.Telegram.WebApp;
+
 
   const tg_id = tg.initDataUnsafe.user.id;
 
@@ -48,10 +50,13 @@ const Mashina = () => {
   return (
     <div className='container'>
       <div className="row FirstBox d-grid gap-2 mx-auto m-5">
+        <h6 className='fw-bold'>Mashinangiz Qanaqa ?</h6>
+
         {mashina.map((msh) => (
 
           <Link onClick={() => DrMshBtn(msh)} key={msh.text} className="btn btn-outline-success fw-bold" to='/Driver/QayerManzil'>{msh.text}</Link>
         ))}
+        <Link className="btn btn-outline-info fw-bold my-3" to='/Driver/Tuman'>Orqaga</Link>
 
       </div>
     </div>

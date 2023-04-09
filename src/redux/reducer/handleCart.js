@@ -145,6 +145,24 @@ const handleCart = (state = cart, action) => {
             }
             break;
 
+        case "DRQAYERTUMANTAXI":
+            const driverQayerTumanTaxi = state.find((x) => x.tg_id === product.tg_id);
+            if (driverQayerTumanTaxi) {
+                return state.map((x) =>
+                    x.tg_id === product.tg_id ? { ...x, driverQayerTumanTaxi: product.driverQayerTumanTaxi } : x
+                );
+            } else {
+                const product = action.payload;
+                return [
+                    ...state,
+                    {
+                        ...product,
+                        qty: 1,
+                    }
+                ]
+            }
+            break;
+
 
         default:
             return state;

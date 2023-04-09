@@ -4,9 +4,10 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { addmanzilTuman } from '../../redux/action';
+import { tg } from '../Tg';
 
 const QayerTumanManzilCs = () => {
-  const tg = window.Telegram.WebApp;
+
 
   const tg_id = tg.initDataUnsafe.user.id;
 
@@ -143,13 +144,15 @@ const QayerTumanManzilCs = () => {
   const AndijonW = () => {
     return (
       <div className="row FirstBox d-grid gap-2 mx-auto m-5" >
+        <h6 className='fw-bold'>Andijonning Qayeriga ?</h6>
+
         {
           andijon.map((msh) => (
 
-            <Link onClick={() => DrMnzTBtn(msh)} key={msh.text} className="btn btn-outline-success fw-bold" to='/Customer/KishiSoni'>{msh.text}</Link>
+            <Link onClick={() => DrMnzTBtn(msh)} key={msh.text} className="btn btn-outline-info fw-bold" to='/Customer/KishiSoni'>{msh.text}</Link>
           ))
         }
-
+        <Link className="btn btn-outline-success fw-bold my-3" to='/Customer'>Orqaga</Link>
       </div >
     )
   }
@@ -158,12 +161,16 @@ const QayerTumanManzilCs = () => {
     return (
 
       <div className="row FirstBox d-grid gap-2 mx-auto m-5" >
+        <h6 className='fw-bold'>Farg'onaning Qayeriga ?</h6>
+
         {
           frmr.map((msh) => (
 
-            <Link onClick={() => DrMnzTBtn(msh)} key={msh.text} className="btn btn-outline-success fw-bold" to='/Customer/KishiSoni'>{msh.text}</Link>
+            <Link onClick={() => DrMnzTBtn(msh)} key={msh.val} className="btn btn-outline-info fw-bold" to='/Customer/KishiSoni'>{msh.text}</Link>
           ))
         }
+
+        <Link className="btn btn-outline-success fw-bold my-3" to='/Customer'>Orqaga</Link>
 
       </div >
     )
@@ -172,12 +179,15 @@ const QayerTumanManzilCs = () => {
   const NamanganW = () => {
     return (
       <div className="row FirstBox d-grid gap-2 mx-auto m-5" >
+        <h6 className='fw-bold'>Namanganning Qayeriga ?</h6>
+
         {
           namangan.map((msh) => (
 
-            <Link onClick={() => DrMnzTBtn(msh)} key={msh.text} className="btn btn-outline-success fw-bold" to='/Customer/KishiSoni'>{msh.text}</Link>
+            <Link onClick={() => DrMnzTBtn(msh)} key={msh.text} className="btn btn-outline-info fw-bold" to='/Customer/KishiSoni'>{msh.text}</Link>
           ))
         }
+        <Link className="btn btn-outline-success fw-bold my-3" to='/Customer'>Orqaga</Link>
 
       </div >
     )
@@ -186,16 +196,20 @@ const QayerTumanManzilCs = () => {
   const TashkentW = () => {
     return (
       <div className="row FirstBox d-grid gap-2 mx-auto m-5" >
+        <h6 className='fw-bold'>Toshkentning Qayeriga ?</h6>
+
         {
           tashkent.map((msh) => (
 
-            <Link onClick={() => DrMnzTBtn(msh)} key={msh.text} className="btn btn-outline-success fw-bold" to='/Customer/KishiSoni'>{msh.text}</Link>
+            <Link onClick={() => DrMnzTBtn(msh)} key={msh.text} className="btn btn-outline-info fw-bold" to='/Customer/KishiSoni'>{msh.text}</Link>
           ))
         }
+        <Link className="btn btn-outline-success fw-bold my-3" to='/Customer'>Orqaga</Link>
 
       </div >
     )
   }
+
   const [valUser, setValUser] = useState('')
 
   const addMenu = () => {
@@ -225,7 +239,6 @@ const QayerTumanManzilCs = () => {
 
   return (
     <div className='container' >
-      {console.log(manVal)}
       {valUser === '<TashkentW />' ? <TashkentW />
         : valUser === '<AndijonW />' ? <AndijonW />
           : valUser === '<NamanganW />' ? <NamanganW />

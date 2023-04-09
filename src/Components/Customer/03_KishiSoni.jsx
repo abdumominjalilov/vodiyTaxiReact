@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addkishiSoni } from '../../redux/action';
+import { tg } from '../Tg';
+
 
 const KishiSoniCs = () => {
-  const tg = window.Telegram.WebApp;
 
   const tg_id = tg.initDataUnsafe.user.id;
 
@@ -31,12 +32,15 @@ const KishiSoniCs = () => {
   return (
     <div className='container' >
       <div className="row FirstBox d-grid gap-2 mx-auto m-5" >
+        <h6 className='fw-bold'>Nechta Mijoz Ketadi ?</h6>
+
         {
           kishiSoni.map((msh) => (
 
-            <Link onClick={() => KishiSoniBtn(msh)} key={msh.index} className="btn btn-outline-success fw-bold" to='/Customer/IsmPulTel'>{msh.text}</Link>
+            <Link onClick={() => KishiSoniBtn(msh)} key={msh.val} className="btn btn-outline-info fw-bold" to='/Customer/IsmPulTel'>{msh.text}</Link>
           ))
         }
+        <Link className="btn btn-outline-success fw-bold my-3" to='/Customer/Tuman'>Orqaga</Link>
 
       </div >
     </div >

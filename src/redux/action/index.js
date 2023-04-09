@@ -47,3 +47,9 @@ export const viewDriver = (product) => {
         payload: product
     }
 };
+export const adddriverQayerTumanTaxi = (product) => {
+    return {
+        type: "DRQAYERTUMANTAXI",
+        payload: product
+    }
+};
